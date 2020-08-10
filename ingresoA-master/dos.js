@@ -36,17 +36,18 @@ c)la marca del más liviano de los sólidos
       while (tipo != "solido" && tipo != "liquido") {
         tipo = prompt('Inválido. Ingrese el tipo de producto: "solido" o "liquido"').toLowerCase();
       }
-  
-      acumPeso += peso;
-  
       
+  acumPeso += peso;
+
       switch (tipo) {
+
         case "solido":
             if (!(flagSolidosLivianosPeso) || peso < solidosLivianosPeso) {
               solidosLivianosPeso = peso;
               flagSolidosLivianosPeso = 1;
               marcaSolidosLivianos = marca;
             }
+
         case "liquido":
           if (!(flagLiquidosCaros) || precio > liquidosCarosPrecio) {
             liquidosCarosPrecio = precio;
@@ -58,7 +59,9 @@ c)la marca del más liviano de los sólidos
     } while (seguir === 's');
   
     console.log("A. El peso total de la compra es: " + acumPeso);
+
     console.log("B. El producto líquido más caro es marca " + marcaLiquidosCaros + ".");
+
     console.log("C. El producto sólido más liviano es marca " + marcaSolidosLivianos + ".");
   }
 
